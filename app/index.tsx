@@ -2,7 +2,7 @@ import fetchLocation from "@/services/fetchLocation";
 import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "./global.css";
 
@@ -47,17 +47,17 @@ export default function HomeScreen() {
     getLocationData();
   }, []);
 
-  if (isLoading) {
-    return (
-      <LinearGradient
-        colors={["#1F2937", "#111827"]}
-        className="flex-1 items-center justify-center"
-      >
-        <ActivityIndicator size="large" color="#FFFFFF" />
-        <Text className="text-white text-lg mt-4">Memuat data...</Text>
-      </LinearGradient>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <LinearGradient
+  //       colors={["#1F2937", "#111827"]}
+  //       className="flex-1 items-center justify-center"
+  //     >
+  //       <ActivityIndicator size="large" color="#FFFFFF" />
+  //       <Text className="text-white text-lg mt-4">Memuat data...</Text>
+  //     </LinearGradient>
+  //   );
+  // }
 
   if (error) {
     return (
