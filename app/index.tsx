@@ -1,3 +1,4 @@
+import fetchLocation from "@/services/fetchLocation";
 import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from "react";
@@ -30,27 +31,20 @@ export default function HomeScreen() {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getLocationData = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        if (json.status === "OK") {
-          setData(json);
-        } else {
-          throw new Error("API status tidak OK");
-        }
+        const response = await fetchLocation();
+        setData(response);
       } catch (e: any) {
+        setError(e);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchData();
+    getLocationData();
   }, []);
 
   if (isLoading) {
@@ -89,7 +83,7 @@ export default function HomeScreen() {
       >
         <SafeAreaView className="flex-1 items-center justify-center p-8 w-full">
           <Text className="text-white text-3xl font-bold mb-8">
-            Deteksi Lokasi Kajur
+            Lacak Lokasi Kajur
           </Text>
           <View className="bg-white/95 w-[340px] items-center rounded-3xl p-8 shadow-2xl">
             <View className="bg-blue-100 p-5 rounded-full mb-6 border-4 border-blue-200">
