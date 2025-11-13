@@ -1,9 +1,9 @@
-import "./global.css";
-import React, { useState, useEffect } from "react";
-import { View, Text, ActivityIndicator, StatusBar } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import "./global.css";
 
 const API_URL = "http://spidah.my.id/dimana.php";
 
@@ -82,11 +82,16 @@ export default function HomeScreen() {
   }
 
   return (
-    <>
-      <StatusBar barStyle="light-content" />
-      <LinearGradient colors={["#3b82f6", "#1d4ed8"]} className="flex-1">
-        <SafeAreaView className="flex-1 items-center justify-center p-8">
-          <View className="bg-white/95 w-full items-center rounded-3xl p-8 shadow-2xl">
+    <View className="flex justify-center items-center w-full">
+      <LinearGradient
+        colors={["#3b82f6", "#1d4ed8"]}
+        className="absolute left-0 right-0 bottom-0 top-0 w-full"
+      >
+        <SafeAreaView className="flex-1 items-center justify-center p-8 w-full">
+          <Text className="text-white text-3xl font-bold mb-8">
+            Deteksi Lokasi Kajur
+          </Text>
+          <View className="bg-white/95 w-[340px] items-center rounded-3xl p-8 shadow-2xl">
             <View className="bg-blue-100 p-5 rounded-full mb-6 border-4 border-blue-200">
               <Feather name="map-pin" size={48} color="#1d4ed8" />
             </View>
@@ -107,6 +112,6 @@ export default function HomeScreen() {
           </View>
         </SafeAreaView>
       </LinearGradient>
-    </>
+    </View>
   );
 }
