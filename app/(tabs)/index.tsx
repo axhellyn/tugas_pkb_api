@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import "./global.css";
+import "../global.css";
 
 import HeaderApp from "@/components/HeaderApp";
 
@@ -63,7 +63,7 @@ export default function HomeScreen() {
     return (
       <LinearGradient
         colors={["#991B1B", "#7F1D1D"]}
-        className="flex-1 items-center justify-center p-5"
+        className="flex-1 items-center justify-center p-5s"
       >
         <Feather name="alert-triangle" size={48} color="white" />
         <Text className="text-white text-2xl font-bold mt-4">
