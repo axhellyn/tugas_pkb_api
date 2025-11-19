@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
+import PullToRefreshExampleTS from "@/components/refresh";
 
 import HeaderApp from "@/components/HeaderApp";
 
@@ -79,6 +80,7 @@ export default function HomeScreen() {
     <>
       <HeaderApp title="KAJURTREX" />
       <View className="flex justify-center items-center w-full">
+        <PullToRefreshExampleTS />
         <LinearGradient
           colors={["#3b82f6", "#1d4ed8"]}
           // kalau anda ios, komen di baris bawah unkomenin
