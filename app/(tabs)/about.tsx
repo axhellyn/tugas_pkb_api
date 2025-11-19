@@ -10,10 +10,10 @@ export default function AboutScreen() {
     <>
       <HeaderApp title="Tentang Aplikasi" />
 
-     
+
       <LinearGradient
-        colors={["#3b82f6", "#1d4ed8"]}
-        className="absolute inset-0 w-full h-full"
+        colors={["#3b82f6", "#36487aff"]}
+        // className="absolute inset-0 w-full h-full"
       />
 
     
