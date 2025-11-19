@@ -18,6 +18,9 @@
         "backgroundImage": "./assets/images/background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "statusBar": {
+        "hidden": true
+      },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
