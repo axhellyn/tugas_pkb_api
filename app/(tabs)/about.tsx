@@ -1,23 +1,41 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, View } from "react-native";
 import "../global.css";
 
 import HeaderApp from "@/components/HeaderApp";
 
-export default function HomeScreen() {
+export default function AboutScreen() {
   return (
     <>
-      <HeaderApp title="KAJURTREX" />
-      <View className="flex justify-center items-center w-full">
-        <LinearGradient
-          colors={["#3b82f6", "#1d4ed8"]}
-          // kalau anda ios, komen di baris bawah unkomenin
-          // className="absolute left-0 right-0 bottom-0 top-0 w-full"
-        >
-          <SafeAreaView className="flex-1 items-center justify-center p-8 w-full"></SafeAreaView>
-        </LinearGradient>
+      <HeaderApp title="Tentang Aplikasi" />
+
+     
+      <LinearGradient
+        colors={["#3b82f6", "#1d4ed8"]}
+        className="absolute inset-0 w-full h-full"
+      />
+
+    
+      <View className="flex-1 items-center justify-center px-6">
+        <View className="bg-white/95 min-w-[340px] items-center rounded-3xl p-8 shadow-2xl">
+
+          <Text className="text-gray-900 text-3xl font-bold mb-3 text-center">
+            KAJURTREX
+          </Text>
+
+          <Text className="text-gray-600 text-center leading-relaxed">
+            KAJURTREX adalah aplikasi yang dirancang untuk menemukan lokasi kepala
+            jurusan Teknik Informatika, Universitas Sriwijaya.
+          </Text>
+
+          <View className="mt-5 border-t border-gray-300 pt-4">
+            <Text className="text-gray-500 text-center text-sm">
+              Dibuat dengan cinta menggunakan React Native & Expo
+            </Text>
+          </View>
+
+        </View>
       </View>
     </>
   );
